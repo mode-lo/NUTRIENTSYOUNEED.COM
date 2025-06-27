@@ -20,14 +20,13 @@
 
   <section id="inicio" class="hero">
     <h1>Nutrients You Need</h1>
-    <p>Descubre los productos FitLine que transformarán tu salud y energía.</p>
+    <p>Descubre los productos FitLine que renovarán tu salud, energía y bienestar.</p>
   </section>
 
   <section id="productos">
     <h2>Catálogo de Productos FitLine</h2>
     <div class="product-grid">
-      <!-- Aquí se insertan todas las fichas -->
-      <!-- Ejemplo 2 fichas que puedes copiar después -->
+      <!-- Product cards -->
       <div class="product" id="fitline-botella">
         <img src="img/botella.jpg" alt="FitLine Botella">
         <h3>FitLine Botella</h3>
@@ -41,19 +40,27 @@
         <p>Ideal para mezclar tus suplementos con facilidad.</p>
         <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/?TP=21075705#fitline-shaker" target="_blank" class="button">Comprar ahora</a>
       </div>
-      <!-- Agrega aquí más productos -->
+
+      <div class="product" id="fitline-activize-oxyplus">
+        <img src="img/activize-oxyplus.jpg" alt="FitLine Activize Oxyplus">
+        <h3>FitLine Activize Oxyplus</h3>
+        <p>Energía y enfoque para rendir al máximo cada día.</p>
+        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/?TP=21075705#fitline-activize-oxyplus" target="_blank" class="button">Comprar ahora</a>
+      </div>
+      
+      <!-- Agrega el resto del catálogo de la misma forma -->
     </div>
   </section>
 
   <section id="testimonios">
     <h2>Testimonios</h2>
-    <blockquote>“Desde que uso FitLine tengo más energía y descanso mejor.” – Cliente satisfecho</blockquote>
-    <blockquote>“Los productos son excelentes y naturales. ¡Muy recomendados!” – Usuaria feliz</blockquote>
+    <blockquote>“Desde que uso FitLine tengo más energía y descanso mejor.”</blockquote>
+    <blockquote>“Los productos son excelentes, naturales y efectivos.”</blockquote>
   </section>
 
   <section id="equipo">
     <h2>Únete al Equipo</h2>
-    <p>Soy Maribel Pérez, líder del equipo en Madrid bajo Eliseo, el nº 1 en España. Únete hoy y comienza tu camino hacia bienestar y libertad financiera.</p>
+    <p>Soy Maribel Pérez, líder del equipo en Madrid, bajo Eliseo, el número 1 en España. Únete para empezar tu cambio.</p>
     <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/?TP=21075705" class="button">Empieza ahora</a>
   </section>
 
@@ -64,37 +71,3 @@
   <script src="scripts.js"></script>
 </body>
 </html>
-.hero-fachada {
-  background: url('img/hero-bg.jpg') center/cover no-repeat;
-  color: #fff;
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-.hero-fachada::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-.btn-primary {
-  background: #E10600;
-  color: #fff;
-  padding: 12px 30px;
-  margin: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.btn-secondary {
-  background: #FFA500;
-  color: #fff;
-  padding: 12px 30px;
-  margin: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
