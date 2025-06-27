@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Completo FitLine | Nutrients You Need</title>
+    <title>Nutrients You Need (N&N) | Productos FitLine Completos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <style>
         :root {
             --primary: #0056b3;
@@ -14,99 +15,37 @@
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
-            --light-gray: #e9ecef;
             --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--dark);
+            overflow-x: hidden;
             background-color: #f5f7fa;
         }
-        
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), #003d82);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 20px;
-        }
-        
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .nav-menu a:hover {
-            color: var(--secondary);
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.pm-international.com/es/es/images/default-source/default-album/hero-bg.jpg?sfvrsn=0') center/cover no-repeat;
-            padding: 100px 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
+
         .btn {
             display: inline-block;
             padding: 12px 30px;
@@ -116,45 +55,181 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
-            margin: 5px;
         }
-        
+
         .btn-primary {
-            background: white;
-            color: var(--primary);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, var(--primary), #003d82);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
         }
-        
+
         .btn-primary:hover {
-            background: var(--light-gray);
+            background: linear-gradient(135deg, #004494, #002e63);
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
         }
-        
+
         .btn-secondary {
-            background: var(--secondary);
+            background: linear-gradient(135deg, var(--secondary), #e05a00);
             color: white;
             box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
         }
-        
+
         .btn-secondary:hover {
-            background: #e05a00;
+            background: linear-gradient(135deg, #e05a00, #c94e00);
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
         }
-        
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), #008a43);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
+        }
+
+        .btn-accent:hover {
+            background: linear-gradient(135deg, #008a43, #007036);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 166, 81, 0.4);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.pm-international.com/es/es/images/default-source/default-album/hero-bg.jpg?sfvrsn=0') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            background-color: white;
+        }
+
         .section-title {
             text-align: center;
-            margin: 60px 0 40px;
+            margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
         }
-        
+
         .section-title h2:after {
             content: '';
             position: absolute;
@@ -166,224 +241,338 @@
             transform: translateX(-50%);
             border-radius: 2px;
         }
-        
-        .category-title {
-            text-align: center;
-            margin: 50px 0 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-        
-        .products-grid {
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-img img {
+            transform: scale(1.05);
+        }
+
+        .feature-content {
+            padding: 25px;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Products */
+        .products {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
             margin-bottom: 60px;
         }
-        
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
         .product-card {
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             height: 100%;
         }
-        
+
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .product-img {
-            height: 250px;
+            height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
             background: #f9f9f9;
         }
-        
+
         .product-img img {
-            max-height: 210px;
+            max-height: 180px;
             max-width: 100%;
             transition: var(--transition);
         }
-        
+
         .product-card:hover .product-img img {
             transform: scale(1.05);
         }
-        
+
         .product-content {
             padding: 20px;
+            text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .product-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .product-content .flavor {
-            display: inline-block;
-            background: var(--light-gray);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
         }
-        
+
         .product-content .price {
             color: var(--primary);
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin: 10px 0;
         }
-        
+
         .product-content .btn {
             width: 100%;
             margin-top: auto;
             padding: 10px 15px;
-            font-size: 0.9rem;
         }
-        
-        .flavors-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 10px 0;
+
+        .category-title {
+            text-align: center;
+            margin: 60px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary);
+            font-size: 1.8rem;
+            color: var(--primary);
         }
-        
-        .flavor-badge {
-            background: var(--light-gray);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        
-        .flavor-badge:hover {
-            background: var(--secondary);
-            color: white;
-        }
-        
-        .flavor-badge.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .featured-products {
-            background: var(--light);
-            padding: 60px 0;
-        }
-        
-        .testimonials {
-            padding: 80px 0;
+
+        /* Networking */
+        .networking {
+            padding: 100px 0;
             background: linear-gradient(135deg, #1a3a6c, #0e2446);
             color: white;
         }
-        
-        .testimonial-grid {
+
+        .networking-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
-        
-        .testimonial-card {
+
+        .networking-text h2 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .networking-text p {
+            margin-bottom: 20px;
+        }
+
+        .levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .level-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            padding: 30px;
+            padding: 20px;
+            text-align: center;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
         }
-        
+
+        .level-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .level-card h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .networking-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .networking-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
         .testimonial-card img {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 3px solid var(--secondary);
+            border: 3px solid var(--primary);
         }
-        
+
         .testimonial-card h4 {
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 5px;
         }
-        
-        .position {
+
+        .testimonial-card .position {
+            color: var(--gray);
             font-style: italic;
-            margin-bottom: 15px;
-            opacity: 0.8;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-        }
-        
-        .cta {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(135deg, var(--accent), #008a43);
-            color: white;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+
+        .testimonial-text {
+            font-style: italic;
+            position: relative;
         }
-        
-        .benefit {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(0, 86, 179, 0.1);
+            position: absolute;
+            line-height: 1;
+        }
+
+        .testimonial-text:before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .testimonial-text:after {
+            bottom: -50px;
+            right: -20px;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), #003d82);
+            color: white;
             text-align: center;
         }
-        
-        .benefit i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+
+        .cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
             color: white;
         }
-        
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 60px 0 20px;
+            padding: 70px 0 0;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        
+
         .footer-col h4 {
-            font-family: 'Montserrat', sans-serif;
+            color: white;
             font-size: 1.3rem;
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-col h4:after {
             content: '';
             position: absolute;
@@ -393,32 +582,37 @@
             bottom: 0;
             left: 0;
         }
-        
+
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: var(--transition);
         }
-        
+
         .footer-links a:hover {
             color: var(--secondary);
             padding-left: 5px;
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -431,53 +625,102 @@
             font-size: 18px;
             transition: var(--transition);
         }
-        
+
         .social-links a:hover {
             background: var(--secondary);
             transform: translateY(-5px);
         }
-        
+
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding: 20px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
             font-size: 0.9rem;
         }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
+
+        /* Animations */
+        [data-aos] {
+            transition: all 1s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .networking-content {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
             
-            .nav-menu {
-                margin-top: 20px;
+            .levels {
                 justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+            
+            .nav-menu.active {
+                left: 0;
             }
             
             .nav-menu li {
-                margin: 0 10px;
+                margin: 15px 0;
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container header-container">
             <div class="logo">
                 <h1>Nutrients <span>You Need</span></h1>
             </div>
-            <ul class="nav-menu">
+            
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Quiénes Somos</a></li>
                 <li><a href="#networking">Networking</a></li>
-                <li><a href="#unete">Únete</a></li>
+                <li><a href="#unete" class="btn btn-accent">Únete a Nosotros</a></li>
             </ul>
         </div>
     </header>
@@ -485,125 +728,31 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
-            <h1>Catálogo Completo de Productos FitLine</h1>
-            <p>Descubre todos los productos de nutrición avanzada con tecnología NTC®. Suplementos, vitaminas y productos para el cuidado personal de máxima calidad.</p>
-            <a href="#productos" class="btn btn-primary">Ver Productos</a>
-            <a href="#unete" class="btn btn-secondary">Únete al Equipo</a>
+            <div class="hero-content">
+                <h1 data-aos="fade-right">Todos los Productos FitLine en un Solo Lugar</h1>
+                <p data-aos="fade-right" data-aos-delay="100">Descubre la gama completa de suplementos nutricionales de FitLine con los mejores precios y tu código de afiliado.</p>
+                <div class="hero-buttons" data-aos="fade-right" data-aos-delay="200">
+                    <a href="#productos" class="btn btn-primary">Ver Productos</a>
+                    <a href="#unete" class="btn btn-secondary">Únete al Equipo</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Product Categories -->
-    <section class="featured-products" id="productos">
+    <!-- Products -->
+    <section class="products" id="productos">
         <div class="container">
-            <div class="section-title">
-                <h2>Todas las Categorías de Productos</h2>
-                <p>Explora la gama completa de FitLine organizada por categorías</p>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Catálogo Completo de Productos FitLine</h2>
+                <p>Todos los productos disponibles con enlaces directos a la tienda oficial</p>
             </div>
-
-            <!-- Nutrición Deportiva -->
-            <h3 class="category-title">Nutrición Deportiva</h3>
+            
+            <!-- Suplementos Nutricionales -->
+            <h3 class="category-title" data-aos="fade-right">Suplementos Nutricionales</h3>
             <div class="products-grid">
                 <!-- Restorate -->
-                <div class="product-card">
+                <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="product-img">
                         <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-restorate/fitline_restorate_30st_250x250px.png?sfvrsn=2" alt="FitLine Restorate">
                     </div>
-                    <div class="product-content">
-                        <h3>FitLine Restorate</h3>
-                        <p>Suplemento para la regeneración muscular durante la noche</p>
-                        <div class="flavors-container">
-                            <span class="flavor-badge active">Original</span>
-                        </div>
-                        <div class="price">39,90 €</div>
-                        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/restorate/?TP=21075705" class="btn btn-primary">Comprar Ahora</a>
-                    </div>
-                </div>
-                
-                <!-- PowerCocktail -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-powercocktail/fitline_powercocktail_250x250px.png?sfvrsn=2" alt="FitLine PowerCocktail">
-                    </div>
-                    <div class="product-content">
-                        <h3>FitLine PowerCocktail</h3>
-                        <p>Bebida isotónica para un rendimiento óptimo</p>
-                        <div class="flavors-container">
-                            <span class="flavor-badge active">Frutas del Bosque</span>
-                            <span class="flavor-badge">Tropical</span>
-                            <span class="flavor-badge">Naranja-Mango</span>
-                        </div>
-                        <div class="price">29,90 €</div>
-                        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/powercocktail/?TP=21075705" class="btn btn-primary">Comprar Ahora</a>
-                    </div>
-                </div>
-                
-                <!-- Endurance -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-endurance/fitline_endurance_250x250px.png?sfvrsn=2" alt="FitLine Endurance">
-                    </div>
-                    <div class="product-content">
-                        <h3>FitLine Endurance</h3>
-                        <p>Mejora la resistencia y reduce la fatiga</p>
-                        <div class="flavors-container">
-                            <span class="flavor-badge active">Frutas del Bosque</span>
-                        </div>
-                        <div class="price">39,90 €</div>
-                        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/endurance/?TP=21075705" class="btn btn-primary">Comprar Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Control de Peso -->
-            <h3 class="category-title">Control de Peso</h3>
-            <div class="products-grid">
-                <!-- ProShape -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-proshape/fitline_proshape_250x250px.png?sfvrsn=2" alt="FitLine ProShape">
-                    </div>
-                    <div class="product-content">
-                        <h3>FitLine ProShape</h3>
-                        <p>Batido proteico para el control del peso</p>
-                        <div class="flavors-container">
-                            <span class="flavor-badge active">Vainilla</span>
-                            <span class="flavor-badge">Chocolate</span>
-                            <span class="flavor-badge">Fresa</span>
-                        </div>
-                        <div class="price">42,90 €</div>
-                        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/proshape/?TP=21075705" class="btn btn-primary">Comprar Ahora</a>
-                    </div>
-                </div>
-                
-                <!-- Metabolic Pack -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-metabolic-pack/fitline_metabolic-pack_250x250px.png?sfvrsn=2" alt="FitLine Metabolic Pack">
-                    </div>
-                    <div class="product-content">
-                        <h3>FitLine Metabolic Pack</h3>
-                        <p>Pack completo para activar el metabolismo</p>
-                        <div class="price">119,90 €</div>
-                        <a href="https://www.pm-international.com/es/es/acerca-de-nuestros-productos/metabolic-pack/?TP=21075705" class="btn btn-primary">Comprar Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Salud y Bienestar -->
-            <h3 class="category-title">Salud y Bienestar</h3>
-            <div class="products-grid">
-                <!-- Basics -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://www.pm-international.com/es/es/images/default-source/products/fitline/fitline-basics/fitline_basics_250x250px.png?sfvrsn=2" alt="FitLine Basics">
-                    </div>
-                    <div class="product-content">
-                        <h3>FitLine Basics</h3>
-                        <p>Complejo vitamínico-mineral para el bienestar diario</p>
-                        <div class="flavors-container">
-                            <span class="flavor-badge active">Original</span>
-                        </div>
-                        <div class="price">34,90 €</div>
-                        <a href="ht
-
-
+                    <div
