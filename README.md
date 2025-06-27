@@ -64,3 +64,37 @@
   <script src="scripts.js"></script>
 </body>
 </html>
+.hero-fachada {
+  background: url('img/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.hero-fachada::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+.btn-primary {
+  background: #E10600;
+  color: #fff;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn-secondary {
+  background: #FFA500;
+  color: #fff;
+  padding: 12px 30px;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
